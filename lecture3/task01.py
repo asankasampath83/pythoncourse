@@ -1,14 +1,5 @@
-Print("add to cart")
+cat = input("Enter the name of the cat: ")
+dog = input("Enter the name of the dog: ")
 
-if not available:
-    print("remove from the cart.")
-while True:
-    item = input("add item to the cart" :)
-if item = = "":
-
-
-Remove from the cart
-
-Check the cart
-
-stopkkkk
+if cat==dog:
+    print("Oh my! The cat and dog have the same name!")
