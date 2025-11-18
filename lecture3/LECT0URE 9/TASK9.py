@@ -1,0 +1,41 @@
+class Elevator:
+    def __init__(self, bottom_floor, top_floor):
+        self.bottom_floor = bottom_floor
+        self.top_floor = top_floor
+        self.current_floor = bottom_floor  # Elevator starts at bottom floor
+
+    def floor_up(self):
+        if self.current_floor < self.top_floor:
+            self.current_floor += 1
+            print(f"Elevator is now on floor {self.current_floor}")
+
+    def floor_down(self):
+        if self.current_floor > self.bottom_floor:
+            self.current_floor -= 1
+            print(f"Elevator is now on floor {self.current_floor}")
+
+    def go_to_floor(self, target_floor):
+        print(f"\nStarting to move to floor {target_floor}...")
+
+        if target_floor > self.current_floor:
+            while self.current_floor < target_floor:
+                self.floor_up()
+
+        elif target_floor < self.current_floor:
+            while self.current_floor > target_floor:
+                self.floor_down()
+
+        else:
+            print("Elevator is already on that floor.")
+
+        print(f"Arrived at floor {self.current_floor}\n")
+
+
+# ✅ main() is OUTSIDE the class — correct
+def main():
+    h = Elevator(1, 10)
+    h.go_to_floor(5)
+    h.go_to_floor(1)
+
+
+main()
